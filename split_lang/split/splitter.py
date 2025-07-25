@@ -675,7 +675,7 @@ class LangSplitter:
                 if substr.lang == "x":
                     new_substrings[index].lang = max_lang
         # NOTE: 如果 ja 数量是 zh 数量的 10 倍以上，则该 zh 设置为 ja
-        if substring_text_len_by_lang["ja"] >= substring_text_len_by_lang["zh"] * 10:
+        if substring_text_len_by_lang["ja"] >= substring_text_len_by_lang["zh"] * 10 and substring_text_len_by_lang["zh"] > 0:
             for index, substr in enumerate(new_substrings):
                 if substr.lang == "zh":
                     new_substrings[index].lang = "ja"
