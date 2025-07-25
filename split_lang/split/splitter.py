@@ -618,6 +618,7 @@ class LangSplitter:
                     and substrings[index].length * 10 < substrings[index + 1].length
                 ):
                     right_block = substrings[index + 1]
+                    substring_text_len_by_lang[right_block.lang] += right_block.length
                     new_substrings.append(
                         SubString(
                             is_digit=False,
